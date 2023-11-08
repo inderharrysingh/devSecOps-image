@@ -28,7 +28,7 @@ spec:
         app: react-app
     spec:
       containers:
-      - image: inderharrysingh/react-app:1699437659
+      - image: inderharrysingh/react-app:1699439835
         imagePullPolicy: Always
         name: react-app
         resources: {}
