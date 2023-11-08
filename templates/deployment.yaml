@@ -14,4 +14,4 @@ spec:
     spec:
       containers:
         - name: react-app
-          image: inderharrysingh/react-app:latest
+          image: inderharrysingh/react-app:v1699444178
