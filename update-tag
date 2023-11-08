@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# Check if the command-line argument is provided
+if [ $# -ne 1 ]; then
+    echo "Usage: $0 <new-tag>"
+    exit 1
+fi
+
+new_tag="$1"
+file="templates/deployment.yaml"
+
+# Use sed to update the image tag
+sed -i "s/inderharrysingh\/react-app:.*/inderharrysingh\/react-app:${new_tag}/" "$file"
+
+echo "Image tag updated to $new_tag in $file"
+
