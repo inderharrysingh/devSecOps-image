@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: "2023-11-08T06:30:02Z"
+  generation: 1
+  labels:
+    app: react-app
+  name: react-app
+  namespace: default
+  resourceVersion: "1439"
+  uid: 794d23dc-0635-40ec-8d3d-40f54ba0b4d8
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: react-app
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: react-app
+    spec:
+      containers:
+      - image: inderharrysingh/react-app:latest
+        imagePullPolicy: Always
+        name: react-app
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+status: {}
